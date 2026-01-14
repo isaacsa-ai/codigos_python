@@ -45,9 +45,9 @@ while(1):
     try:
         opcao = int(input(texto %saldo_atual))
 
-        if (opcao < 1 or opcao > 4):
+        if (opcao < 1 or opcao > 5):
             raise Exception
-    except:
+    except ValueError:
         limpa_terminal()
         print("ERROR: Insira uma opçao válida!")
     
@@ -96,16 +96,10 @@ while(1):
         aux = 0
         
         print("-------------------- TRANSAÇÕES -----------------------------------\n") 
-
-        for i in operacoes:
-            aux_ordem = aux + 1
-            aux_operacao = operacoes[aux][0]
-            aux_valor = operacoes[aux][1]
-            aux_descricao = operacoes[aux][2]
-
-            print("\n {}° Operação : {} --> Valor: {} Descrição: {}".format(aux_ordem, aux_operacao, aux_valor, aux_descricao))
-            aux = aux + 1
         
+        for idx, operacao in enumerate(operacoes, start=1):
+            print(f"{idx}° Operação: {operacao[0]} | {operacao[1]} | {operacao[2]}")
+
         print("\n-------------------------------------------------------------------\n\n") 
     
     #Mostrando Saldo em Conta

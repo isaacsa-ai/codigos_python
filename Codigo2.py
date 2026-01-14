@@ -57,7 +57,7 @@ while(1):
 
 
     #Saída de dados
-    print("\n\nO resultado da operação é:"+ str(resultado))
+    print(f"\n\nO resultado da operação é:{resultado}")
     sair = int(input("\n\nDeseja finalizar? \n\n 1 - SIM \n 2 - Nao\n"))
     if(sair == 1):
         break
